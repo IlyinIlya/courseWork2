@@ -2,13 +2,11 @@ package course2.examinerservice.service;
 
 import course2.examinerservice.domain.Question;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class JavaQuestionService implements QuestionService{
     private final Set<Question> questions = new HashSet<>();
+    private final Random random = new Random();
 
     @Override
     public Question add(String question, String answer) {
@@ -25,16 +23,23 @@ public class JavaQuestionService implements QuestionService{
 
     @Override
     public Question remove(Question question) {
+        if (questions.remove(question)) {
+            return question;
+        }
         return null;
     }
 
     @Override
     public Collection<Question> getAll() {
-        return List.of();
+        return new HashSet<>(questions);
     }
 
     @Override
     public Question getRandomQuestion() {
-        return null;
+        if (questions.isEmpty()) {
+            return null;
+        }
+        int index = random.nextInt(questions.size());
+        return new ArrayList<>(questions).get(index);
     }
 }
