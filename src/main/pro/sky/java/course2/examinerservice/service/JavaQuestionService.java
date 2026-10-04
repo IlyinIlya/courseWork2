@@ -12,12 +12,15 @@ public class JavaQuestionService implements QuestionService{
 
     @Override
     public Question add(String question, String answer) {
-        return null;
+        Question questionN = new Question(question, answer);
+        questions.add(questionN);
+        return questionN;
     }
 
     @Override
     public Question add(Question question) {
-        return null;
+        questions.add(question);
+        return question;
     }
 
     @Override
