@@ -1,10 +1,12 @@
 package course2.examinerservice.service;
 
 import course2.examinerservice.domain.Question;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-public class JavaQuestionService implements QuestionService{
+@Service
+public class JavaQuestionService implements QuestionService {
     private final Set<Question> questions = new HashSet<>();
     private final Random random = new Random();
 
