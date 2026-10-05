@@ -4,7 +4,6 @@ import course2.examinerservice.domain.Question;
 import course2.examinerservice.service.JavaQuestionService;
 import org.junit.jupiter.api.Test;
 
-import java.awt.geom.QuadCurve2D;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
